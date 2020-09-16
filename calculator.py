@@ -18,4 +18,5 @@ elif b == '%' and c != 0:
 elif b == '/' or b == '//' or b == '%' and c == 0:
     print("Division by zero!")
 else:
-    print("Uknown operator! Available operators: '+','-','*','/','//','%','**'")
+    print("Unknown operator! Available operators: '+','-','*','/','//','%','**'")
+
