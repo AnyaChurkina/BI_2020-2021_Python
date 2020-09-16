@@ -14,7 +14,7 @@ elif b == '/' and c != 0:
 elif b == '//' and c != 0:
     print(a // c)
 elif b == '%' and c != 0:
-    print(a % c) 
+    print(a % c)
 elif b == '/' or b == '//' or b == '%' and c == 0:
     print("Division by zero!")
 else:
