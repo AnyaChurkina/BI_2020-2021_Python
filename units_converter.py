@@ -63,4 +63,6 @@ if a == "speed":
         result = number/3.6
     elif unit1 == "m/s" and unit2 == "km/h":
         result = number*3.6
+else:
+    print("Unknown parameter! Try again.")
 print(result)
