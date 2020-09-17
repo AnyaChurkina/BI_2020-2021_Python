@@ -1,5 +1,5 @@
 a = input("Which parameter would you like to convert: length, weight, \
-pressure, volume, speed?")
+pressure, temperature, volume, speed?")
 if a == "length":
     unit1 = input("Which unit would you like to convert from? \
 Available units: sm/m/km")
@@ -74,4 +74,24 @@ Available units: m/s, km/h")
         result = number/3.6
     elif unit1 == "m/s" and unit2 == "km/h":
         result = number*3.6
+if a == "temperature":
+    unit1 = input("Which unit would you like to convert from? \
+Available units: C/F/K")
+    unit2 = input("Which unit would you like to convert to? \
+Available units: C/F/K")
+    number = float(input("Enter your number: "))
+    if unit1 == "C" and unit2 == "F":
+        result = number*(9/5) + 32
+    elif unit1 == "C" and unit2 == "K":
+        result = number + 273.15
+    elif unit1 == "F" and unit2 == "C":
+        result = (number - 32)*(5/9)
+    elif unit1 == "F" and unit2 == "K":
+        result = (number - 32)*(5/9) + 273.15
+    elif unit1 == "K" and unit2 == "C":
+        result = number - 273.15
+    elif unit1 == "K" and unit2 == "F":
+        result = (number - 273.15)*(9/5) + 32
+else:
+    print("Unknown parameter! Try again.")
 print(result)
