@@ -45,7 +45,7 @@ sns.histplot(sequence_length, kde=True, bins=20)
 plt.subplot(2, 2, 3)  # plot lower left graph
 plt.ylabel("Density")
 plt.xlabel("Sequence length (bp)")
-plt.title('Density plot with pyplot')
+plt.title('Density plot with seaborn and pyplot')
 sns.kdeplot(sequence_length, fill=True, alpha=.2)
 
 # Distribution plot like FastQC
