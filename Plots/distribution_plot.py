@@ -59,6 +59,5 @@ plt.ylabel("Number of sequences")
 plt.title("Sequence length distribution plot like FastQC")
 plt.grid(axis='y')
 plt.savefig("Sequence length distribution plot.png")
-plt.close()
 
 print("Painting is done")
