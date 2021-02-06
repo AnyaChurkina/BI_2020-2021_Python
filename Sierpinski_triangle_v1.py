@@ -13,6 +13,7 @@ v1 = [0, 0]
 v2 = [1, 0]
 v3 = [0.5, 0.5 * 3 / 2]
 
+plt.figure(figsize=(15, 10))
 for _ in range(n):
     val = randint(0, 2)
     if val == 0:
