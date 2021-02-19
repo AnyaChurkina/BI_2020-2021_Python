@@ -1,5 +1,6 @@
 import random
 
+
 '''
 Input text without punctuation marks.
 '''
