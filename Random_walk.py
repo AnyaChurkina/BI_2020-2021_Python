@@ -2,6 +2,7 @@ import numpy as np
 import random
 import matplotlib.pyplot as plt
 
+
 step_number = 1000  # define the number of steps
 
 # define x and y coordinate
