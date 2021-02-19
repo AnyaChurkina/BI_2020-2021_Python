@@ -3,6 +3,7 @@ import random
 import time
 import matplotlib.pyplot as plt
 
+
 numpy_time = []
 random_time = []
 array_size = range(1, 10000)  # define size of arrays
