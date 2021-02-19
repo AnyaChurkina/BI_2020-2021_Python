@@ -1,4 +1,6 @@
 import random
+
+
 '''
 You can input text with simple punctuation: ".", ",", ";", ":", "!", "?"
 '''
