@@ -16,5 +16,5 @@ train[['pos', 'A_fraction', 'T_fraction', 'G_fraction', 'C_fraction']]. \
 plt.title("Frequency for each nucleotides per position")
 plt.xlabel("Position")
 plt.ylabel("Frequency")
-plt.show()
-# plt.savefig("Stacked bar plot.png")
+# plt.show()
+plt.savefig("Stacked bar plot.png")
