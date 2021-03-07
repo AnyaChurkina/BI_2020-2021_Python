@@ -69,6 +69,7 @@ fig = plt.figure(figsize=(15, 20))
 cardio.hist(ax=fig.gca(), color='lightpink')
 plt.suptitle("Distribution histograms of numeric variables", fontsize=25)
 plt.savefig("Distribution histograms.png")
+plt.close()
 
 '''
 Conclusion:
@@ -81,6 +82,7 @@ sns.pairplot(cardio[['Sex', 'age', 'BMI', 'heartRate', 'cigsPerDay', 'glucose',
              palette='Set1', height=1.5)
 sns.set_style('whitegrid')
 plt.savefig("Pairwise scatterplot by sex.png")
+plt.close()
 
 '''
 Conclusion:
@@ -97,6 +99,7 @@ plt.title('Correlation plot of numeric variable', fontsize=22)
 plt.xticks(fontsize=12)
 plt.yticks(fontsize=12)
 plt.savefig("Correlation plot.png")
+plt.close()
 
 '''
 Conclusion:
@@ -120,21 +123,25 @@ sns.catplot(x="Sex", y="age", col="TenYearCHD", data=cardio, kind="box",
             height=4, aspect=.7)
 plt.suptitle('Risk of heart disease by gender and age')
 plt.savefig("Risk of heart disease by gender and age.png")
+plt.close()
 
 sns.catplot(x="Sex", y="totChol", col="TenYearCHD", data=cardio, kind="box",
             height=4, aspect=.7)
 plt.suptitle('Risk of heart disease by gender and total cholesterol')
 plt.savefig("Risk of heart disease by gender and totChol.png")
+plt.close()
 
 sns.catplot(x="Sex", y="BMI", col="TenYearCHD", data=cardio, kind="box",
             height=4, aspect=.7)
 plt.suptitle('Risk of heart disease by gender and BMI')
 plt.savefig("Risk of heart disease by gender and BMI.png")
+plt.close()
 
 sns.catplot(x="Sex", y="glucose", col="TenYearCHD", data=cardio, kind="box",
             height=4, aspect=.7)
 plt.suptitle('Risk of heart disease by gender and glucose')
 plt.savefig("Risk of heart disease by gender and glucose.png")
+plt.close()
 
 '''
 Conclusion:
