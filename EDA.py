@@ -133,7 +133,7 @@ plt.savefig("Risk of heart disease by gender and BMI.png")
 
 sns.catplot(x="Sex", y="glucose", col="TenYearCHD", data=cardio, kind="box",
             height=4, aspect=.7)
-plt.suptitle('Risk of heart disease by gender and total glucose')
+plt.suptitle('Risk of heart disease by gender and glucose')
 plt.savefig("Risk of heart disease by gender and glucose.png")
 
 '''
