@@ -111,10 +111,10 @@ Positive correlation is observed between variables:
  - age and diaBP
  - age and totalChol
 
-Positive correlation is observed between variables:
+Negative correlation is observed between variables:
  - age and education
  - age and Cigs Per Day
- - education and BMP
+ - education and BMI
  - education sysBP
 '''
 
