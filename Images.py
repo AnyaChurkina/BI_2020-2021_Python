@@ -8,7 +8,7 @@ path = 'Planets.jpg'  # path to image
 
 # Task 1. Editing images
 
-# # Filtering with PIL
+# Filtering with PIL
 PIL_image = Image.open(path)
 # PIL_image.show()
 
@@ -44,7 +44,6 @@ plt.imshow(plt_planets[:, :, 1], cmap="bone")
 plt.axis("off")
 # plt.show()
 plt.savefig('Bone_planets.png')
-
 
 # Filter 6: hot cmap
 plt.figure(figsize=(16, 9))
