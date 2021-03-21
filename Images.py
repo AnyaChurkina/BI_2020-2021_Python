@@ -3,12 +3,11 @@ import matplotlib.pyplot as plt
 import cv2
 import numpy as np
 
-
 path = 'Planets.jpg'  # path to image
 
 # Task 1. Editing images
 
-# Filtering with PIL
+# # Filtering with PIL
 PIL_image = Image.open(path)
 # PIL_image.show()
 
@@ -45,6 +44,7 @@ plt.axis("off")
 # plt.show()
 plt.savefig('Bone_planets.png')
 
+
 # Filter 6: hot cmap
 plt.figure(figsize=(16, 9))
 plt.imshow(plt_planets[:, :, 1], cmap="hot")
@@ -53,8 +53,14 @@ plt.axis("off")
 plt.savefig('Hot_planets.png')
 
 # Filtering with OpenCV
-# Filter 7: Add the Gaussian noise to the image
+# Filter 7: Black/white image
 CV_image = cv2.imread(path)
+bw = cv2.cvtColor(CV_image, cv2.COLOR_BGR2GRAY)
+# cv2.imshow('bw', bw)
+# cv2.waitKey(0)
+cv2.imwrite('Bw_planets.png', bw)
+
+# Filter 8: Add the Gaussian noise to the image
 gauss = np.random.normal(1, 2, plt_planets.size)
 gauss = gauss.reshape(plt_planets.shape[0],plt_planets.shape[1],
                       plt_planets.shape[2]).astype('uint8')
@@ -63,12 +69,6 @@ plt.imshow(img_gauss)
 plt.axis("off")
 # plt.show()
 plt.savefig('Gauss_planets.png')
-
-# Filter 8: Black/white image
-bw = cv2.cvtColor(CV_image, cv2.COLOR_BGR2GRAY)
-# cv2.imshow('bw', bw)
-# cv2.waitKey(0)
-cv2.imwrite('Bw_planets.png', bw)
 
 # Filter 9: Planets in galaxy
 galaxy = Image.open("galaxy.jpg")  # path to background image
@@ -88,9 +88,9 @@ plt.savefig('Planets_in_galaxy.png')
 # Filter 10: Milky way planets
 planets = planets.convert('L')
 im_rgba = galaxy.copy()
-planets.putalpha(im_rgba)
+im_rgba.putalpha(planets)
 # im_rgba.show()
-planets.save("Milky_way_planets.png")
+im_rgba.save("Milky_way_planets.png")
 
 # Task 2. Finding circles
 gray_image = cv2.cvtColor(CV_image, cv2.COLOR_BGR2GRAY)
