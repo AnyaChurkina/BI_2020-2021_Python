@@ -55,13 +55,14 @@ plt.savefig('Hot_planets.png')
 # Filtering with OpenCV
 # Filter 7: Add the Gaussian noise to the image
 CV_image = cv2.imread(path)
-gauss = np.random.normal(0, 1, CV_image.size)
-gauss = gauss.reshape(plt_planets.shape[0], plt_planets.shape[1],
+gauss = np.random.normal(1, 2, plt_planets.size)
+gauss = gauss.reshape(plt_planets.shape[0],plt_planets.shape[1],
                       plt_planets.shape[2]).astype('uint8')
 img_gauss = cv2.add(plt_planets, gauss)
-# cv2.imshow('Gauss_planets', img_gauss)
-# cv2.waitKey(0)
-cv2.imwrite('Gauss_planets.png', img_gauss)
+plt.imshow(img_gauss)
+plt.axis("off")
+# plt.show()
+plt.savefig('Gauss_planets.png')
 
 # Filter 8: Black/white image
 bw = cv2.cvtColor(CV_image, cv2.COLOR_BGR2GRAY)
@@ -87,9 +88,9 @@ plt.savefig('Planets_in_galaxy.png')
 # Filter 10: Milky way planets
 planets = planets.convert('L')
 im_rgba = galaxy.copy()
-im_rgba.putalpha(planets)
+planets.putalpha(im_rgba)
 # im_rgba.show()
-im_rgba.save("Milky_way_planets.png")
+planets.save("Milky_way_planets.png")
 
 # Task 2. Finding circles
 gray_image = cv2.cvtColor(CV_image, cv2.COLOR_BGR2GRAY)
