@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import cv2
 import numpy as np
 
+
 path = 'Planets.jpg'  # path to image
 
 # Task 1. Editing images
