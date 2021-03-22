@@ -1,5 +1,6 @@
 """
-It is very easy python script to plot sequence length distribution of fasta file with using Biopython
+It is very easy python script to plot sequence length distribution of
+fasta file with Biopython
 
 To paint use:
     python3 distribution_plot.py <absolut path to fasta file>
