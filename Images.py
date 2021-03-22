@@ -62,7 +62,7 @@ cv2.imwrite('Bw_planets.png', bw)
 
 # Filter 8: Add the Gaussian noise to the image
 gauss = np.random.normal(1, 2, plt_planets.size)
-gauss = gauss.reshape(plt_planets.shape[0],plt_planets.shape[1],
+gauss = gauss.reshape(plt_planets.shape[0], plt_planets.shape[1],
                       plt_planets.shape[2]).astype('uint8')
 img_gauss = cv2.add(plt_planets, gauss)
 plt.imshow(img_gauss)
