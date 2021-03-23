@@ -96,6 +96,7 @@ class RNA:
 
 if __name__ == '__main__':
 
+
     dna_seq = DNA('AGTAGTATGCTACGAGGC')
     rna_seq = RNA('AGUCGAGAGUAUGCUACGAGGC')
     other_seq = DNA('AGTAGTATGCTACGAGGC')

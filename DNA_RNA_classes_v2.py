@@ -74,9 +74,10 @@ class RNA(Sequence):
 
 if __name__ == '__main__':
 
+
     dna_seq = DNA('AGTAGTATGCTACGAGGC')
     rna_seq = RNA('AGUCGAGAGUAUGCUACGAGGC')
-    other_seq = DNA('AGTAGTATGCTACGAGGC')
+    other_seq = DNA('AGTAGTATCTACGAGGC')
 
     # DNA tests
     print(dna_seq.sequence)  # print DNA sequence
