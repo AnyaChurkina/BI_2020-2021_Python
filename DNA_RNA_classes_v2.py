@@ -72,9 +72,8 @@ class RNA(Sequence):
         return DNA("".join(self.complement.get(base, base) for base in
                            self.sequence).replace('U', 'T'))
 
+
 if __name__ == '__main__':
-
-
     dna_seq = DNA('AGTAGTATGCTACGAGGC')
     rna_seq = RNA('AGUCGAGAGUAUGCUACGAGGC')
     other_seq = DNA('AGTAGTATCTACGAGGC')
