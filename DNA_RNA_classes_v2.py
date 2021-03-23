@@ -81,7 +81,7 @@ if __name__ == '__main__':
     # DNA tests
     print(dna_seq.sequence)  # print DNA sequence
     print(dna_seq.length)  # print DNA sequence length
-    print(dna_seq.__eq__(other_seq))  # Sequences comparison
+    print(dna_seq == other_seq)  # Sequences comparison
     print(hash(dna_seq))
 
     cnt = 1
@@ -96,12 +96,12 @@ if __name__ == '__main__':
     # RNA tests
     print(rna_seq.sequence)  # print sequence
     print(rna_seq.length)  # print sequence length
-    print(rna_seq.__eq__(other_seq))  # Sequences comparison
+    print(rna_seq == other_seq)  # Sequences comparison
     print(hash(rna_seq))
 
     cnt = 1
     while cnt <= 5:
-        print(next(rna_seq))  # print first 5 nucleotides from sequence
+        print(next(rna_seq))  # print first 5 nucleotides from RNA sequence
         cnt += 1
 
     print(rna_seq.gc_content())  # GC content of RNA sequence
