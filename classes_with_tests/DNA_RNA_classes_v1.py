@@ -7,16 +7,16 @@ class DNA:
     dna_nucleotides = {'A', 'T', 'G', 'C'}
 
     def __init__(self, sequence):
-        if set(sequence.upper()) <= self.dna_nucleotides:
-            if isinstance(sequence, str):
+        if isinstance(sequence, str):
+            if set(sequence.upper()) <= self.dna_nucleotides:
                 self.sequence = sequence.upper()
                 self.length = len(sequence)
                 self._index = 0
                 self.complement = {'A': 'T', 'T': 'A', 'G': 'C', 'C': 'G'}
             else:
-                raise TypeError('Sequence should be type string')
+                raise TypeError('Incorrect DNA sequence')
         else:
-            raise TypeError('Incorrect DNA sequence')
+            raise TypeError('Sequence should be type string')
 
     def __eq__(self, other):
         if self.sequence == other.sequence:
@@ -36,7 +36,7 @@ class DNA:
 
     def gc_content(self):
         if self.length == 0:
-            raise ZeroDivisionError
+            raise TypeError('Sequence is None')
         else:
             g_count = self.sequence.count('G')
             c_count = self.sequence.count('C')
@@ -55,16 +55,16 @@ class RNA:
     rna_nucleotides = {'A', 'U', 'G', 'C'}
 
     def __init__(self, sequence):
-        if set(sequence.upper()) <= self.rna_nucleotides:
-            if isinstance(sequence, str):
+        if isinstance(sequence, str):
+            if set(sequence.upper()) <= self.rna_nucleotides:
                 self.sequence = sequence.upper()
                 self.length = len(sequence)
                 self._index = 0
                 self.complement = {'A': 'U', 'U': 'A', 'G': 'C', 'C': 'G'}
             else:
-                raise TypeError('Sequence should be a string')
+                raise TypeError('Incorrect RNA sequence')
         else:
-            raise TypeError('Incorrect RNA sequence')
+            raise TypeError('Sequence should be a string')
 
     def __eq__(self, other):
         if self.sequence == other.sequence:
@@ -84,7 +84,7 @@ class RNA:
 
     def gc_content(self):
         if self.length == 0:
-            raise ZeroDivisionError
+            raise TypeError('Sequence is None')
         else:
             g_count = self.sequence.count('G')
             c_count = self.sequence.count('C')
@@ -92,8 +92,7 @@ class RNA:
 
     def reverse_complement(self):
         return "".join(self.complement.get(base, base) for base in
-                       reversed(self.sequence.
-                                replace('U', 'T'))).replace('T', 'U')
+                       reversed(self.sequence))
 
     def cDNA(self):
         return DNA("".join(self.complement.get(base, base) for base in
@@ -104,14 +103,13 @@ if __name__ == '__main__':
     dna_seq = DNA('AGTAGTGCTACGAGGC')
     rna_seq = RNA('AGUCGAGAGUAUGCUACGAGGC')
     other_seq = DNA('AGTAGTATGCTACGAGGC')
-    dna_test = DNA('')
+
 
     # DNA tests
-    print(dna_test.gc_content())
+    print(dna_seq.complement)
     print(dna_seq.sequence)  # print DNA sequence
     print(dna_seq.length)  # print DNA sequence length
     print(dna_seq == other_seq)  # Sequences comparison
-    print(hash(dna_seq))
 
     cnt = 1
     while cnt <= 5:
