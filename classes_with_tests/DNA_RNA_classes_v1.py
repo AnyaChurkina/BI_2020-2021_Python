@@ -106,7 +106,6 @@ if __name__ == '__main__':
 
 
     # DNA tests
-    print(dna_seq.complement)
     print(dna_seq.sequence)  # print DNA sequence
     print(dna_seq.length)  # print DNA sequence length
     print(dna_seq == other_seq)  # Sequences comparison

@@ -1,16 +1,11 @@
 import unittest
-from DNA_RNA_classes_v1 import DNA
-from DNA_RNA_classes_v1 import RNA
+from DNA_RNA_classes_v1 import DNA, RNA
 
 
 class TestingClassDNA(unittest.TestCase):
-
-    def test_dna_is_dna(self):
+    def test_dna_type(self):
         dna = DNA('ATGC')
-        self.assertEqual(dna.sequence, 'ATGC')
-
-    def test_dna_not_dna(self):
-        self.assertRaises(TypeError, DNA, 'Hello world!')
+        self.assertTrue(type(dna), DNA)
 
     def test_dna_is_a_str(self):
         dna = DNA('ATGC')
@@ -18,6 +13,13 @@ class TestingClassDNA(unittest.TestCase):
 
     def test_dna_not_a_str(self):
         self.assertRaises(TypeError, DNA, ['ATGC'])
+
+    def test_dna_nucleotides(self):
+        dna = DNA('ATGC')
+        self.assertEqual(dna.sequence, 'ATGC')
+
+    def test_not_dna_nucleotides(self):
+        self.assertRaises(TypeError, DNA, 'Hello world!')
 
     def test_dna_sequence(self):
         dna = DNA('AtgC')
@@ -43,8 +45,20 @@ class TestingClassDNA(unittest.TestCase):
         dna = DNA('ATGC')
         self.assertEqual(dna.transcribe(), RNA('UACG'))
 
+    def test_transcribe_class(self):
+        dna = DNA('ATGC')
+        self.assertTrue(type(dna.transcribe()), RNA)
+
     def test_equal(self):
         self.assertEqual(DNA('ATGC'), DNA('ATGC'))
+
+    def test_not_equal(self):
+        self.assertNotEqual(DNA('ATGC'), DNA('ATTTTTTGC'))
+
+    def test_hash(self):
+        dna = DNA('ATGC')
+        other_dna = DNA('ATGC')
+        self.assertEqual(hash(dna), hash(other_dna))
 
     def test_iterable(self):
         dna = DNA('ATGC')
@@ -53,19 +67,24 @@ class TestingClassDNA(unittest.TestCase):
 
 class TestingClassRNA(unittest.TestCase):
 
-    def test_rna_is_dna(self):
+    def test_rna_type(self):
         rna = RNA('AUGC')
-        self.assertEqual(rna.sequence, 'AUGC')
-
-    def test_rna_not_dna(self):
-        self.assertRaises(TypeError, RNA, 'Hello world!')
+        self.assertTrue(type(rna), RNA)
 
     def test_rna_is_a_str(self):
         rna = RNA('AUGC')
         self.assertTrue(isinstance(rna.sequence, str))
 
     def test_rna_not_a_str(self):
-        self.assertRaises(TypeError, RNA, ['AUGC'])
+        rna = RNA('AUGC')
+        self.assertRaises(TypeError, rna, ['AUGC'])
+
+    def test_rna_nucleotides(self):
+        rna = RNA('AUGC')
+        self.assertEqual(rna.sequence, 'AUGC')
+
+    def test_not_rna_nucleotides(self):
+        self.assertRaises(TypeError, RNA, 'Hello world!')
 
     def test_rna_sequence(self):
         rna = RNA('AugC')
@@ -91,12 +110,25 @@ class TestingClassRNA(unittest.TestCase):
         rna = RNA('AUGC')
         self.assertEqual(rna.cDNA(), DNA('TACG'))
 
+    def test_cDNA_class(self):
+        rna = RNA('AUGC')
+        self.assertEqual(type(rna.cDNA()), DNA)
+
     def test_equal(self):
         self.assertEqual(RNA('AUGC'), RNA('AUGC'))
+
+    def test_not_equal(self):
+        self.assertNotEqual(RNA('AUGC'), RNA('AUUUUUUUGC'))
+
+    def test_hash(self):
+        rna = RNA('AUGC')
+        other_rna = RNA('AUGC')
+        self.assertEqual(hash(rna), hash(other_rna))
 
     def test_iterable(self):
         rna = RNA('AUGC')
         self.assertListEqual([x for x in rna.sequence], ['A', 'U', 'G', 'C'])
+
 
 if __name__ == '__main__':
     unittest.main()
