@@ -104,7 +104,6 @@ if __name__ == '__main__':
     rna_seq = RNA('AGUCGAGAGUAUGCUACGAGGC')
     other_seq = DNA('AGTAGTATGCTACGAGGC')
 
-
     # DNA tests
     print(dna_seq.sequence)  # print DNA sequence
     print(dna_seq.length)  # print DNA sequence length
