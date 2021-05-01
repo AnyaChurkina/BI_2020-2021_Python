@@ -2,8 +2,7 @@ import unittest
 from DNA_RNA_classes_v2 import DNA, RNA, Sequence
 
 
-class TestingClassDNA(unittest.TestCase):
-    
+class TestingClassDNA(unittest.TestCase): 
     @classmethod
     def setUpClass(cls):
         cls.dna = DNA('ATGC')
@@ -68,11 +67,11 @@ class TestingClassDNA(unittest.TestCase):
         self.assertListEqual([x for x in self.dna.sequence],
                              ['A', 'T', 'G', 'C'])
         self.assertListEqual([x for x in self.strange_dna.sequence],
-                             ['A', 'T', 'G', 'C', 'A', 'T', 'G', 'C', 'A', 'A'])
+                             ['A', 'T', 'G', 'C', 'A', 
+                              'T', 'G', 'C', 'A', 'A'])
 
 
 class TestingClassRNA(unittest.TestCase):
-    
     @classmethod
     def setUpClass(cls):
         cls.rna = RNA('AUGC')
@@ -82,7 +81,7 @@ class TestingClassRNA(unittest.TestCase):
 
     def test_rna_type(self):
         self.assertTrue(type(self.rna), RNA)
-        
+
     def test_rna_is_a_str(self):
         self.assertTrue(isinstance(self.rna.sequence, str))
 
@@ -136,7 +135,8 @@ class TestingClassRNA(unittest.TestCase):
         self.assertListEqual([x for x in self.rna.sequence],
                              ['A', 'U', 'G', 'C'])
         self.assertListEqual([x for x in self.strange_rna.sequence],
-                             ['A', 'U', 'G', 'C', 'A', 'U', 'G', 'C', 'A', 'A'])
+                             ['A', 'U', 'G', 'C', 'A', 
+                              'U', 'G', 'C', 'A', 'A'])
 
 
 if __name__ == '__main__':
