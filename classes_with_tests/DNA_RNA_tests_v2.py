@@ -82,18 +82,18 @@ class TestingClassRNA(unittest.TestCase):
 
     def test_rna_type(self):
         self.assertTrue(type(self.rna), RNA)
-
-    def test_rna_is_rna(self):
-        self.assertTrue(self.rna.sequence, 'AUGC')
-
-    def test_rna_not_rna(self):
-        self.assertRaises(TypeError, DNA, 'Hello world!')
-
+        
     def test_rna_is_a_str(self):
         self.assertTrue(isinstance(self.rna.sequence, str))
 
     def test_rna_not_a_str(self):
         self.assertRaises(TypeError, self.rna, ['AUGC'])
+        
+    def test_rna_nucleotides(self):
+        self.assertTrue(self.rna.sequence, 'AUGC')
+
+    def test_not_rna_nucleotides(self):
+        self.assertRaises(TypeError, DNA, 'Hello world!')
 
     def test_rna_is_a_sequence(self):
         self.assertTrue(issubclass(type(self.rna), Sequence))
