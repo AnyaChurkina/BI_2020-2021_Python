@@ -3,6 +3,7 @@ from DNA_RNA_classes_v2 import DNA, RNA, Sequence
 
 
 class TestingClassDNA(unittest.TestCase):
+    
     @classmethod
     def setUpClass(cls):
         cls.dna = DNA('ATGC')
@@ -69,7 +70,9 @@ class TestingClassDNA(unittest.TestCase):
         self.assertListEqual([x for x in self.strange_dna.sequence],
                              ['A', 'T', 'G', 'C', 'A', 'T', 'G', 'C', 'A', 'A'])
 
+
 class TestingClassRNA(unittest.TestCase):
+    
     @classmethod
     def setUpClass(cls):
         cls.rna = RNA('AUGC')
