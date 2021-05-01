@@ -2,7 +2,7 @@ import unittest
 from DNA_RNA_classes_v1 import DNA, RNA
 
 
-class TestingClassDNA(unittest.TestCase):    
+class TestingClassDNA(unittest.TestCase):
     def test_dna_type(self):
         dna = DNA('ATGC')
         self.assertTrue(type(dna), DNA)
