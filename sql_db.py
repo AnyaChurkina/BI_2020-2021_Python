@@ -94,9 +94,12 @@ connection.execute('''CREATE TABLE IF NOT EXISTS pupils
 school_id INTEGER,
 children_id INTEGER,
 parents_id INTEGER,
-FOREIGN KEY (school_id) REFERENCES schools (school_id) ON DELETE CASCADE,
-FOREIGN KEY (children_id) REFERENCES children (children_id) ON DELETE CASCADE,
-FOREIGN KEY (parents_id) REFERENCES parents (parents_id) ON DELETE CASCADE )''')
+FOREIGN KEY (school_id) REFERENCES schools (school_id)
+ON DELETE CASCADE,
+FOREIGN KEY (children_id) REFERENCES children (children_id)
+ON DELETE CASCADE,
+FOREIGN KEY (parents_id) REFERENCES parents (parents_id)
+ON DELETE CASCADE )''')
 connection.commit()
 
 # add data to the table 'pupils'
