@@ -142,5 +142,6 @@ JOIN parents USING(parents_id)'''
 res = connection.execute(query)
 for row in res.fetchall():
     print(row)
-
 # there are no rows with school id = 3, DELETE CASCADE works
+
+connection.close()
